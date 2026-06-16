@@ -3,7 +3,8 @@ import json  # importa o modulo json
 import os  # importa o modulo os
 import subprocess  # importa o modulo subprocess
 
-PASTA_DADOS = os.path.join(os.path.expanduser('~'), 'Documents', 'notesCLI_data') # define a pasta de dados
+base_dir = os.environ.get('APPDATA') if os.name == 'nt' else os.path.expanduser('~/.config') # detecta a pasta base de usuário de forma genérica
+PASTA_DADOS = os.path.join(base_dir, 'notesCLI') # define a pasta de dados
 ARQUIVO_JSON = os.path.join(PASTA_DADOS, 'notas.json') # define o caminho absoluto
 
 def abrir_editor(caminho): # função que abre o arquivo no vim
@@ -68,7 +69,7 @@ def main(): # funcao principal para o pacote pip
             "nome": nome_nota
         }
 
-        notas.append(nova_nota) # adiciona o dicionario nova_nota ao array notas
+        notas.append(nova_nota) #adiciona o dicionario nova_nota ao array notas
 
         with open(ARQUIVO_JSON, 'w', encoding='utf-8') as arquivo: # abre o notas.json em modo escrita
             json.dump(notas, arquivo, ensure_ascii=False, indent=4) # salva o array notas no arquivo notas.json
@@ -92,4 +93,4 @@ def main(): # funcao principal para o pacote pip
         sys.exit(1) # fecha o programa
 
 if __name__ == '__main__': #verifica se o script esta sendo executado diretamente
-    main() # chama a funcao principal
+    main() # chama a funcao principal?
