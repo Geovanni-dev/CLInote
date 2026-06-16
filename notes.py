@@ -5,7 +5,7 @@ import subprocess  # importa o modulo subprocess
 
 base_dir = os.environ.get('APPDATA') if os.name == 'nt' else os.path.expanduser('~/.config') # detecta a pasta base de usuário de forma genérica
 PASTA_DADOS = os.path.join(base_dir, 'notesCLI') # define a pasta de dados
-ARQUIVO_JSON = os.path.join(PASTA_DADOS, 'notas.json') # define o caminho absoluto
+ARQUIVO_JSON = os.path.join(PASTA_DADOS, 'notas.json') #define o caminho absoluto
 
 def abrir_editor(caminho): # função que abre o arquivo no vim
     subprocess.run(['vim', caminho], shell=True)
