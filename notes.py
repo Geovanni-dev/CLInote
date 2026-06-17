@@ -2,13 +2,27 @@ import sys  # importa o modulo sys
 import json  # importa o modulo json
 import os  # importa o modulo os
 import subprocess  # importa o modulo subprocess
+import shutil
 
-base_dir = os.environ.get('APPDATA') if os.name == 'nt' else os.path.expanduser('~/.config') # detecta a pasta base de usuário de forma genérica
+base_dir = os.environ.get('APPDATA') if os.name == 'nt' else os.path.expanduser('~/.config') # detecta a pasta base de usuario de forma genérica
 PASTA_DADOS = os.path.join(base_dir, 'notesCLI') # define a pasta de dados
 ARQUIVO_JSON = os.path.join(PASTA_DADOS, 'notas.json') #define o caminho absoluto
 
-def abrir_editor(caminho): # função que abre o arquivo no vim
-    subprocess.run(['vim', caminho], shell=True)
+
+def abrir_editor(caminho):
+    editores = ['vim', 'nano', 'notepad'] #lista de editores por prioridade
+    editor_escolhido = None #inicializa a variavel como vazia
+
+    for editor in editores: # inicia um loop para verificar os editores
+        if shutil.which(editor): # verifica se o executavel do editor existe no PATH do sistema
+            editor_escolhido = editor # se achar algum editor defini como escolhido
+            break # interrompe o loop
+
+    if not editor_escolhido: # se não achar nenhum editor
+        print("Erro: Nenhum editor encontrado.") #mensagem de erro
+        sys.exit(1) # fecha o programa
+
+    subprocess.run([editor_escolhido, caminho], check=True) #executa o editor
 
 def main(): # funcao principal para o pacote pip
     if not os.path.exists(PASTA_DADOS): # se a pasta de dados nao existir
