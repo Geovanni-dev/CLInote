@@ -6,7 +6,7 @@ setup( # inicia a funçao setup
     py_modules=["notes"],
     entry_points={
         'console_scripts': [
-            'n=notes:main', # define o atalho para o script
+            'nc=notes:main', # define o atalho para o script
         ],
     },
 )
