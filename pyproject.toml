@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"] # define a dependência de build necessaria para empacotar o projeto
+build-backend = "setuptools.build_meta" # especifica o backend de build utilizado
+
+[project]
+name = "CLInote" #nome do projeto
+version = "0.1.4" # versão atual do projeto
+authors = [
+  { name="Geovani Rodrigues", email="geovanirodr.dev@gmail.com" }, #credencias
+]
+description = "Gerenciador de notas minimalista para terminal" # Resumo indexado na busca do projeto no PyPI
+readme = "README.md" # readme do projeto que irá ser exibido no PyPI
+requires-python = ">=3.7"
+classifiers = [ # metados da categoria do projeto no PyPI
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+nc = "notes:main" #cria o entry point do CLI
