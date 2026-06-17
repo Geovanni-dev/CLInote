@@ -8,6 +8,8 @@ base_dir = os.environ.get('APPDATA') if os.name == 'nt' else os.path.expanduser(
 PASTA_DADOS = os.path.join(base_dir, 'notesCLI') # define a pasta de dados
 ARQUIVO_JSON = os.path.join(PASTA_DADOS, 'notas.json') #define o caminho absoluto
 
+def exibir_rodape(): # rodapé com informações
+    print("\n © 2026 Desenvolvido por Geovani Rodrigues | notesCLI v0.1.0 \n ")
 
 def abrir_editor(caminho):
     editores = ['vim', 'nano', 'notepad'] #lista de editores por prioridade
@@ -17,6 +19,8 @@ def abrir_editor(caminho):
         if shutil.which(editor): # verifica se o executavel do editor existe no PATH do sistema
             editor_escolhido = editor # se achar algum editor defini como escolhido
             break # interrompe o loop
+
+    exibir_rodape() # exibe o rodapé
 
     if not editor_escolhido: # se não achar nenhum editor
         print("Erro: Nenhum editor encontrado.") #mensagem de erro
@@ -50,6 +54,7 @@ def main(): # funcao principal para o pacote pip
             for nota in notas: # percorre o array notas
                 print(f"ID: {nota['id']} | Nome: {nota['nome']}")
                 print("-" * 20)
+        exibir_rodape() #exibe o rodapé
         sys.exit() # fecha o programa
 
     # ======== COMANDO DELETE
@@ -66,7 +71,8 @@ def main(): # funcao principal para o pacote pip
         else:
             with open(ARQUIVO_JSON, 'w', encoding='utf-8') as arquivo: # abre o arquivo notas.json em modo escrita
                 json.dump(notas_filtradas, arquivo, ensure_ascii=False, indent=4) # salva o array notas_filtradas no arquivo notas.json
-            print(f"Nota ID {id_apagar} removida com sucesso!") # mensagem de sucesso
+            print(f"Nota com o ID {id_apagar} removida com sucesso!") # mensagem de sucesso
+        exibir_rodape()
         sys.exit()
 
     # =========== COMANDO ADD
@@ -88,7 +94,7 @@ def main(): # funcao principal para o pacote pip
         with open(ARQUIVO_JSON, 'w', encoding='utf-8') as arquivo: # abre o notas.json em modo escrita
             json.dump(notas, arquivo, ensure_ascii=False, indent=4) # salva o array notas no arquivo notas.json
 
-        print(f"Nota '{nome_nota}' registrada no índice!") # exibe msg de sucesso
+        print(f"A nota '{nome_nota}' foi registrada no notasCLI!") # exibe msg de sucesso
 
         if not os.path.exists(caminho_txt): # se o arquivo não existir, cria um novo com um título dentro
             with open(caminho_txt, 'w', encoding='utf-8') as f:
@@ -107,4 +113,4 @@ def main(): # funcao principal para o pacote pip
         sys.exit(1) # fecha o programa
 
 if __name__ == '__main__': #verifica se o script esta sendo executado diretamente
-    main() # chama a funcao principal?
+    main() # chama a funcao principal
