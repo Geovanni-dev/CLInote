@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta" # especifica o backend de build utilizad
 
 [project]
 name = "CLInote" #nome do projeto
-version = "0.1.4" # versão atual do projeto
+version = "0.1.5" # versão atual do projeto
 authors = [
   { name="Geovani Rodrigues", email="geovanirodr.dev@gmail.com" }, #credencias
 ]
@@ -18,4 +18,4 @@ classifiers = [ # metados da categoria do projeto no PyPI
 ]
 
 [project.scripts]
-nc = "notes:main" #cria o entry point do CLI
+gr = "notes:main" #cria o entry point do CLI

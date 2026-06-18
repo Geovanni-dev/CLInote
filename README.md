@@ -19,14 +19,14 @@ pip install CLInote
 
 🛠️ **Como usar**
 
-Após a instalação, o comando `nc` estará disponível globalmente:
+Após a instalação, o comando `gr` estará disponível globalmente:
 
 | Ação | Comando | Descrição |
 | :--- | :--- | :--- |
-| **Criar nota** | `nc add <nome>` | Cria uma nova nota e abre o editor. |
-| **Listar tudo** | `nc list` | Exibe todas as suas notas salvas. |
-| **Abrir nota** | `nc <nome>` | Abre uma nota existente para edição. |
-| **Deletar nota** | `nc delete <id>` | Remove uma nota permanentemente. |
+| **Criar nota** | `gr add <nome>` | Cria uma nova nota e abre o editor. |
+| **Listar tudo** | `gr list` | Exibe todas as suas notas salvas. |
+| **Abrir nota** | `gr <nome>` | Abre uma nota existente para edição. |
+| **Deletar nota** | `gr delete <id>` | Remove uma nota permanentemente. |
 
 💻 **Configurando editores CLI (Recomendado)**
 
@@ -97,14 +97,14 @@ pip install CLInote
 
 🛠️ **Usage**
 
-After installation, the `nc` command will be available globally:
+After installation, the `gr` command will be available globally:
 
 | Action | Command | Description |
 | :--- | :--- | :--- |
-| **Create note** | `nc add <name>` | Creates a new note and opens the editor. |
-| **List all** | `nc list` | Displays all your saved notes. |
-| **Open note** | `nc <name>` | Opens an existing note for editing. |
-| **Delete note** | `nc delete <id>` | Permanently removes a note. |
+| **Create note** | `gr add <name>` | Creates a new note and opens the editor. |
+| **List all** | `gr list` | Displays all your saved notes. |
+| **Open note** | `gr <name>` | Opens an existing note for editing. |
+| **Delete note** | `gr delete <id>` | Permanently removes a note. |
 
 💻 **Setting up CLI editors (Recommended)**
 

@@ -9,7 +9,7 @@ PASTA_DADOS = os.path.join(base_dir, 'notesCLI') # define a pasta de dados
 ARQUIVO_JSON = os.path.join(PASTA_DADOS, 'notas.json') #define o caminho absoluto
 
 def exibir_rodape(): # rodapé com informações
-    print("\n © 2026 Desenvolvido por Geovani Rodrigues | notesCLI v0.1.4 \n ")
+    print("\n © 2026 Desenvolvido por Geovani Rodrigues | notesCLI v0.1.6 \n ")
 
 def abrir_editor(caminho):
     editores = ['vim', 'nano', 'notepad'] #lista de editores por prioridade
