@@ -1,5 +1,5 @@
 <p align="right">
-  <a href="README.pt.md">🇧🇷 Ler em Português</a>
+  <a href="README.pt.md">🇧🇷 Português</a>
 </p>
 
 <h1 align="center">🗒️ CLInote</h1>
